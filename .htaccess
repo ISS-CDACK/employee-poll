@@ -1,0 +1,37 @@
+php_value date.timezone "Asia/Kolkata"
+
+RewriteEngine On
+
+# Prevent direct access to PHP files with extensions
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php [NC]
+RewriteRule ^ 404.html [L]
+# RewriteRule ^ - [R=404,L]
+
+
+# Internally rewrite URLs without extensions to PHP files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Blcok XML
+RewriteRule ^.*\.xml$ - [R=404,L]
+
+# Blcok Docx
+RewriteRule ^.*\.docx$ - [R=404,L]
+
+ErrorDocument 403 "<H1>Page not found</H1>"
+ErrorDocument 500 "<H1>Something Went Wrong At Our End</H1>"
+# ErrorDocument 404 "<H1>Page not found</H1>"
+ErrorDocument 404 /404.html
+
+Header always set X-Frame-Options "SAMEORIGIN"
+Options -Indexes
+
+# Block all reqest methods
+RewriteCond %{REQUEST_METHOD} !^(GET|POST)$ [NC]
+RewriteRule .* - [R=405,L]
+
+DirectoryIndex /login.php
+
+# RewriteCond %{REQUEST_URI} ^/$
+# RewriteRule ^$ /login.php [L]
