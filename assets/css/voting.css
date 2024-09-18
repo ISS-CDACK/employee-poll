@@ -1,0 +1,59 @@
+.accordion:not(:first-child) {
+    margin-top: 30px;
+    /* Use this for margin */
+    /* padding-top: 50px; */
+    /* Use this for padding */
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+    justify-content: center;
+    /* Center content vertically */
+    text-align: center;
+    /* Center text */
+}
+
+.image-container {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    /* Space between image and card body */
+}
+
+.card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.voted-img {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 160px;
+    height: auto;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center button horizontally */
+    justify-content: center;
+    /* Center button vertically */
+}

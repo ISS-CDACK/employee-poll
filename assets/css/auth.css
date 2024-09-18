@@ -1,0 +1,103 @@
+body {
+    background-color: var(--bs-body-bg)
+}
+
+#auth {
+    height: 100vh;
+    overflow-x: hidden
+}
+
+#auth #auth-right {
+    height: 100vh;
+    width: auto;
+    background: url(/assets/img/cdac-logo.png) no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth .col-lg-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth #auth-left {
+    padding: 5rem;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth #auth-left .auth-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#auth #auth-left .auth-subtitle {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    color: #a8aebb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#captcha-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#captcha-image {
+    width: 100%;
+    min-width: 300px;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reload-captcha {
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#reload-captcha i {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1399.9px) {
+    #auth #auth-left {
+        padding: 3rem
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #auth #auth-left {
+        padding: 5rem
+    }
+
+    #captcha-image {
+        min-width: 280px;
+        max-width: 280px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #auth #auth-left {
+        padding: 5rem 3rem
+    }
+
+    #captcha-image {
+        min-width: 240px;
+        max-width: 240px;
+    }
+}
